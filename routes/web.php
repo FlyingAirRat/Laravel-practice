@@ -27,5 +27,6 @@ Route::prefix('boards')-> group(function(){
     //Route::get('/show', [BoardController::class], 'show')->name('boards.show'); 가 아니다!!
     Route::get('destroy', [BoardController::class, 'destroy']);
     //이거 못 추가해서 헤멨다. 메소드 추가하면 라우터에 추가해주자
-
+    Route::get('edit', [BoardController::class, 'edit'])->name('boards.edit');
+    Route::post('update', [BoardController::class, 'update'])->name('boards.update');
 });
