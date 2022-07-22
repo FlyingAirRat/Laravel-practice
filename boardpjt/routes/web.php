@@ -18,5 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('/board', [BoardController::class, 'index']);
+//prefix와 group으로 라우팅 주소를 묶을 수 있다.
+Route::prefix('boards')-> group(function(){
+    Route::get('/', [BoardController::class, 'index']);
+    Route::get('/create', [BoardController::class, 'create'])->name('boards.create');
+    Route::get('/show', [boardController::class], 'show')->name('boards.show');
+    }
+);

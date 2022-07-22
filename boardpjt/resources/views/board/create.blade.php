@@ -7,10 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>board index</h1>
-    <div>
-        <a href="<?=route('boards.create')?>">
-    <button type="button">글쓰기</button></a>
-    </div>
+    <h1>boards create</h1>
+    
 </body>
 </html>

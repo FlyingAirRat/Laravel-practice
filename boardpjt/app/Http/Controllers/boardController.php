@@ -9,4 +9,12 @@ class boardController extends Controller
     public function index() {
         return view('board/index');
     }
+
+    public function create() {
+        return view('board/create');
+    }
+    
+    public function show() {
+        return view('board/show');
+    }
 }
