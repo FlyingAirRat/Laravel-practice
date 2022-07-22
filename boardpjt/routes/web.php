@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\boardController;
+use App\Http\Controllers\BoardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +21,11 @@ Route::get('/', function () {
 //prefix와 group으로 라우팅 주소를 묶을 수 있다.
 Route::prefix('boards')-> group(function(){
     Route::get('/', [BoardController::class, 'index']);
-    Route::get('/create', [BoardController::class, 'create'])->name('boards.create');
-    Route::get('/show', [boardController::class], 'show')->name('boards.show');
-    }
-);
+    Route::get('create', [BoardController::class, 'create'])->name('boards.create');
+    Route::post('store', [BoardController::class, 'store'])->name('boards.store');
+    Route::get('show', [BoardController::class, 'show'])->name('boards.show');
+    //Route::get('/show', [BoardController::class], 'show')->name('boards.show'); 가 아니다!!
+    Route::get('destroy', [BoardController::class, 'destroy']);
+    //이거 못 추가해서 헤멨다. 메소드 추가하면 라우터에 추가해주자
+
+});
