@@ -13,6 +13,7 @@ class boardController extends Controller
     public function create() {
         return view('board/create');
     }
+
     
     public function show() {
         return view('board/show');
